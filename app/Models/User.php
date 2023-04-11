@@ -47,7 +47,7 @@ class User extends Authenticatable
     }
 
     public function getBalanceAttribute(){
-        return $this->leders->sum(function($trans){
+        return $this->ledgers->sum(function($trans){
             return $trans->debit - $trans->credit;
         });
     }
