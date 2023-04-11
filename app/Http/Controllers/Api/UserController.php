@@ -19,7 +19,7 @@ class UserController extends Controller
             $cookies = $request->filled('cookies') ? $request->get('cookies') : 1;
             if($user->wallet > 0){
                 if($user->wallet >= $cookies){
-                    $request->user()->leders()->create(['credit'=> $cookies]);
+                    $request->user()->ledgers()->create(['credit'=> $cookies]);
                     return response()->json(['message'=>'Cookie purcased.'], 201);
                 }else{
                     return response()->json([
