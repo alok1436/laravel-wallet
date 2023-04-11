@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use Illuminate\Http\JsonResponse;
 class UserController extends Controller
 {
     /**
@@ -13,7 +13,7 @@ class UserController extends Controller
      * @param array| $request
      * return json
      */
-    public function buyACookie(Request $request){
+    public function buyACookie(Request $request): JsonResponse{
         try {  
             $user = $request->user(); 
             $cookies = $request->filled('cookies') ? $request->get('cookies') : 1;

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\Api\CreateWalletRequest;
-
+use Illuminate\Http\JsonResponse;
 class WalletController extends Controller
 {
 
@@ -14,7 +14,7 @@ class WalletController extends Controller
      * @param array| $request
      * return json
      */
-    public function addMoney(CreateWalletRequest $request){
+    public function addMoney(CreateWalletRequest $request): JsonResponse{
         try {
             $request->user()->leders()->create(['debit'=> $request->amount]);
             return response()->json(['message'=>'Amount added.'], 201);
