@@ -16,7 +16,7 @@ class WalletController extends Controller
      */
     public function addMoney(CreateWalletRequest $request): JsonResponse{
         try {
-            $request->user()->leders()->create(['debit'=> $request->amount]);
+            $request->user()->ledgers()->create(['debit'=> $request->amount]);
             return response()->json(['message'=>'Amount added.'], 201);
         } catch (\Throwable $th) {
             \Log::error($th->getMessage());

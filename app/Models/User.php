@@ -42,7 +42,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function leders(){
+    public function ledgers(){
         return $this->hasMany(Ledger::class);
     }
 
