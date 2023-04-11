@@ -8,7 +8,7 @@ composer update
 
 ## .env file setup
 
-cp .env.example .evn
+cp .env.example .env
 
 Change the database name, user and password
 
